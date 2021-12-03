@@ -7,6 +7,9 @@
     Public TABLE_MARKETING_HEAD As String = "[marketing_invoice_head]"
     Public TABLE_MARKETING_DETAIL As String = "[marketing_invoice_items]"
 
+    Public TABLE_PPIC_HEAD As String = "[ppic_work_order_head]"
+    Public TABLE_PPIC_ITEMS AS String = "[ppic_work_order_items]"
+
     Public TABLE_LOGISTIC_DO_HEAD As String = "[logistic_do_invoice]"
     Public TABLE_LOGISTIC_DO_DETAIL As String = "[logistic_do_invoice_items"
     Public TABLE_LOGISTIC_PRODUCT_STOCK As String = "[logistic_product_stock]"

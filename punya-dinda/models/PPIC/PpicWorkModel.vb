@@ -28,6 +28,12 @@ Public Class PpicWorkModel
         Me.completed = list(4)
     End Sub
 
+    Sub saveData()
+        Dim sql As String
+        sql = $"INSERT INTO {TABLE_PPIC_HEAD} VALUES({Me.id}, '{Me.work_code}', '{Me.date_now}, '{Me.keterangan}', {Me.completed})"
+        repository.executeRaw(sql)
+    End Sub
+
     Public Sub New(reader As OleDbDataReader)
         Me.id = DM.GetValue(0)
         Debug.WriteLine($"nih valuee {DM.GetString(1)}")
