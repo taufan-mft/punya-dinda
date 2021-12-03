@@ -13,7 +13,7 @@
     Public TABLE_LOGISTIC_RAW_STOCK As String = "[logistic_raw_stock]"
 
 
-    Public TABLE_USER As String = "[user]"
+    Public TABLE_USER As String = "[users]"
     Public TABLE_GUDANG As String = "[gudang]"
 
     Public DIRECTION_IN As String = "in"

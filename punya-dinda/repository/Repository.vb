@@ -13,6 +13,28 @@ Public Class Repository
         Me.role = role
     End Sub
 
+    Sub loginUser(username As String, password As String, form As Form)
+        Dim sql = $"SELECT * FROM {TABLE_USER} WHERE username='{username}' AND password='{password}'"
+        CMD = New OleDb.OleDbCommand(sql, Conn)
+        DM = CMD.ExecuteReader()
+        Dim result = 0
+        If DM.HasRows = True Then
+            While DM.Read
+                result = 1
+                Me.name = DM.GetString(4)
+                Me.role = DM.GetString(3)
+            End While
+        End If
+
+        If result <> 0 Then
+            form.Hide()
+            Form1.Show()
+        Else
+            MsgBox("ANDA SIAPA?")
+        End If
+
+    End Sub
+
     Public Shared Function getInstance() As Repository
         If (objRepository Is Nothing) Then
             objRepository = New Repository()
