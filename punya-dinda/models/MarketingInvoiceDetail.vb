@@ -23,6 +23,13 @@
         Me.nama = nama
         Me.harga = harga
     End Sub
+
+    Sub saveData()
+        Dim sql As String
+        sql = $"INSERT INTO {TABLE_MARKETING_DETAIL} VALUES({Me.id_detail}, {Me.id_order}, {Me.id_produk}, {Me.jumlah}, {Me.harga}, {Me.total})"
+        repository.executeRaw(sql)
+    End Sub
+
     Overrides Function toArray() As List(Of String)
         Dim dynArray As New List(Of String) From {Me.id_detail, Me.id_order, Me.id_produk, Me.jumlah.ToString(), Me.harga.ToString(), Me.total.ToString}
         Return dynArray

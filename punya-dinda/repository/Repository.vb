@@ -46,6 +46,9 @@ Public Class Repository
                 If GetType(T) Is GetType(ProductModel) Then
                     Return CAnyType(Of T)(New ProductModel(DM))
                 End If
+                If GetType(T) Is GetType(CustomerModel) Then
+                    Return CAnyType(Of T)(New CustomerModel(DM))
+                End If
             End While
             End If
     End Function
@@ -88,10 +91,7 @@ Public Class Repository
     Sub showtoBox(row As Integer, DGV As DataGridView, ParamArray var() As TextBox)
         On Error Resume Next
         For i As Integer = 0 To UBound(var, 1)
-
-
             var(i).Text = DGV.Rows(row).Cells(i).Value
-
         Next
     End Sub
     Function checkDuplicateInteger(tableName As String, idName As String, id As String)
@@ -162,6 +162,11 @@ Public Class Repository
         DM = CMD.ExecuteReader
 
 
+    End Sub
+
+    Sub executeRaw(sql As String)
+        CMD = New OleDbCommand(sql, Conn)
+        DM = CMD.ExecuteReader
     End Sub
 
     Sub hapusData(namatabel As String, namaid As String, id As String)

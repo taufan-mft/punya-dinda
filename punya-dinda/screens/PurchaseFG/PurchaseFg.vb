@@ -1,6 +1,7 @@
 ﻿Public Class PurchaseFg
     Dim repository As Repository = Repository.getInstance()
     Dim selectedProduct As ProductModel
+    Dim selectedCustomer As CustomerModel
     Dim orderList As New List(Of MarketingInvoiceDetail)()
     Dim total As Integer
     Private Sub PurchaseFg_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -11,6 +12,11 @@
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         selectedProduct = repository.getSingleData(Of ProductModel)($"SELECT * FROM {TABLE_PRODUK} WHERE id={TextBox5.Text}")
         TextBox6.Text = selectedProduct.name
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        selectedCustomer = repository.getSingleData(Of CustomerModel)($"SELECT * FROM {TABLE_CUSTOMER} WHERE id={TextBox8.Text}")
+        TextBox2.Text = selectedCustomer.name
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
@@ -34,4 +40,7 @@
         ListView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize)
     End Sub
 
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+
+    End Sub
 End Class

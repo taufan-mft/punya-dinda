@@ -15,7 +15,7 @@ Public Class CustomerModel
     End Sub
 
     Overrides Function toArray() As List(Of String)
-        Dim dynArray As New List(Of String) From {Me.id, Me.name, Me.address, Me.phone)}
+        Dim dynArray As New List(Of String) From {Me.id, Me.name, Me.address, Me.phone}
         Return dynArray
     End Function
 
