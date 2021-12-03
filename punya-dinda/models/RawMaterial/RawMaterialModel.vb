@@ -2,6 +2,7 @@ Imports System.Data.OleDb
 
 Public Class RawMaterialModel
     Inherits BaseModel
+    Dim repository As Repository = Repository.getInstance()
     Public id As Integer
     Public name_mat As String
     Public price As Integer

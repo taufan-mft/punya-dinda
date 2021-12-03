@@ -2,6 +2,7 @@
 
 Public Class ProductModel
     Inherits BaseModel
+    Dim repository As Repository = Repository.getInstance()
     Public id As String
     Public name As String
     Public price As Integer

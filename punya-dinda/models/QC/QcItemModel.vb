@@ -2,6 +2,7 @@ Imports System.Data.OleDb
 
 Public Class QcItemModel
     Inherits BaseModel
+    Dim repository As Repository = Repository.getInstance()
     Public id As Integer
     Public qc_head_id As Integer
     Public product_id As Integer

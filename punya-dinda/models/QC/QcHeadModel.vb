@@ -2,6 +2,7 @@ Imports System.Data.OleDb
 
 Public Class QcHeadModel
     Inherits BaseModel
+    Dim repository As Repository = Repository.getInstance()
     Public id As Integer
     Public date_now As String
     Public production_id As Integer
