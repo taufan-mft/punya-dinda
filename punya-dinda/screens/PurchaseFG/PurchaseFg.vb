@@ -17,6 +17,7 @@
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
         selectedCustomer = repository.getSingleData(Of CustomerModel)($"SELECT * FROM {TABLE_CUSTOMER} WHERE id={TextBox8.Text}")
         TextBox2.Text = selectedCustomer.name
+        TextBox3.Text = selectedCustomer.address
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
@@ -41,9 +42,9 @@
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        Dim entry As New MarketingInvoiceHead(TextBox1.Text, "", total, TextBox4.Text, selectedCustomer.id, )
+        Dim entry As New MarketingInvoiceHead(TextBox1.Text, "", total, TextBox4.Text, selectedCustomer.id)
         entry.saveData()
-        For Each order in orderList
+        For Each order In orderList
             order.id_order = entry.id
             order.saveData()
         Next
