@@ -18,6 +18,8 @@
     Public TABLE_LOGISTIC_PRODUCT_STOCK As String = "[logistic_product_stock]"
     Public TABLE_LOGISTIC_RAW_STOCK As String = "[logistic_raw_stock]"
 
+    Public TABLE_RAW_MATERIAL As String = "[raw_material]"
+
 
     Public TABLE_USER As String = "[users]"
     Public TABLE_GUDANG As String = "[gudang]"
