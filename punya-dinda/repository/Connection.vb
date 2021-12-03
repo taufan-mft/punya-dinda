@@ -9,7 +9,7 @@ Module Connection
 
     Sub koneksiDB()
         Try
-            Conn = New OleDbConnection("provider=microsoft.ace.oledb.12.0; data source = YangPentingSelesai.accdb")
+            Conn = New OleDbConnection("provider=microsoft.ace.oledb.12.0; data source = dbnya.accdb")
             Conn.Open()
             MsgBox("DB Connected!")
         Catch ex As Exception

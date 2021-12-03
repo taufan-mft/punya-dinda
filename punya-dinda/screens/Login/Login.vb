@@ -1,15 +1,10 @@
-﻿Public Class Form1
+﻿Public Class Login
+    Dim repository As Repository = Repository.getInstance()
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        products01.Show()
-
-    End Sub
-
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        repository.changeUserData("Tania Wijaya", "manager")
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Customer.Show()
-
+        products01.Show()
     End Sub
 End Class
