@@ -1,6 +1,6 @@
 ﻿Public Class MarketingInvoiceDetail
     Inherits BaseModel
-    Dim repository As Repository = Repository.getInstance()
+    Dim repository As Repository = repository.getInstance()
     Public id_detail As String
     Public id_order As String
     Public id_produk As String

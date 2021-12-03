@@ -1,4 +1,4 @@
-﻿Public Class MarketingInvoiceDetail
+﻿Public Class MarketingInvoiceHead
     Inherits BaseModel
     Dim repository As Repository = Repository.getInstance()
     Public id As Integer
@@ -9,10 +9,10 @@
     Public customer_id As Integer
 
 
-    Public Sub New(id As Integer, 
-                invoice_code As String, 
-                create_at As String, 
-                total_price As String, 
+    Public Sub New(id As Integer,
+                invoice_code As String,
+                create_at As String,
+                total_price As String,
                 date_now As String, customer_id As Integer)
         Dim kode As Integer = CInt(Math.Ceiling(Rnd() * 99)) + CInt(Math.Ceiling(Rnd() * 12))
         While repository.checkDuplicateInteger(TABLE_MARKETING_DETAIL, "id", kode.ToString)
@@ -23,7 +23,7 @@
         Me.create_at = create_at
         Me.total_price = total_price
         Me.date_now = date_now
-        Me.customer_id
+        Me.customer_id = customer_id
     End Sub
 
     Sub saveData()

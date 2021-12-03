@@ -1,6 +1,6 @@
 Imports System.Data.OleDb
 
-Public Class ProductModel
+Public Class PpicWorkModel
     Inherits BaseModel
     Public id As String
     Public name As String
