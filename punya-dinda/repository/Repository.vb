@@ -7,6 +7,9 @@ Public Class Repository
     Private Sub New()
         koneksiDB()
     End Sub
+    Public Shared Function CAnyType(Of T)(ByRef UTO As Object) As T
+        Return CType(UTO, T)
+    End Function
 
     Sub changeUserData(name As String, role As String)
         Me.name = name
@@ -34,6 +37,18 @@ Public Class Repository
         End If
 
     End Sub
+
+    Function getSingleData(Of T)(sql As String) As T
+        CMD = New OleDb.OleDbCommand(sql, Conn)
+        DM = CMD.ExecuteReader()
+            If DM.HasRows = True Then
+                While DM.Read
+                If GetType(T) Is GetType(ProductModel) Then
+                    Return CAnyType(Of T)(New ProductModel(DM))
+                End If
+            End While
+            End If
+    End Function
 
     Public Shared Function getInstance() As Repository
         If (objRepository Is Nothing) Then

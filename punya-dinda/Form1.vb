@@ -1,15 +1,21 @@
 ﻿Public Class Form1
+    Dim repository As Repository = Repository.getInstance()
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        products01.Show()
+        PurchaseFg.Show()
 
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        Label1.Text = repository.name
+        Label2.Text = repository.role
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Customer.Show()
 
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        products01.Show()
     End Sub
 End Class
