@@ -10,6 +10,9 @@
     Public TABLE_PPIC_HEAD As String = "[ppic_work_order_head]"
     Public TABLE_PPIC_ITEMS AS String = "[ppic_work_order_items]"
 
+    Public TABLE_QC_HEAD As String = "[qc_assesment_head]"
+    Public TABLE_QC_ITEMS As String = "[qc_assesment_items]"
+
     Public TABLE_LOGISTIC_DO_HEAD As String = "[logistic_do_invoice]"
     Public TABLE_LOGISTIC_DO_DETAIL As String = "[logistic_do_invoice_items"
     Public TABLE_LOGISTIC_PRODUCT_STOCK As String = "[logistic_product_stock]"
