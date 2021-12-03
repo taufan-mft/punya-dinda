@@ -7,4 +7,8 @@
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         repository.loginUser(TextBox1.Text, TextBox2.Text, Me)
     End Sub
+
+    Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class
