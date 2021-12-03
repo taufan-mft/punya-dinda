@@ -2,6 +2,7 @@ Imports System.Data.OleDb
 
 Public Class PpicWorkItemModel
     Inherits BaseModel
+    Dim repository As Repository = Repository.getInstance()
     Public id As Integer
     Public ppic_wo_id As Integer
     Public product_id As Integer
@@ -19,7 +20,7 @@ Public Class PpicWorkItemModel
     End Sub
 
     Overrides Function toArray() As List(Of String)
-        Dim dynArray As New List(Of String) From {Me.id, Me.ppic_wo_id, Me.product_id Me.quantity}
+        Dim dynArray As New List(Of String) From {Me.id, Me.ppic_wo_id, Me.product_id, Me.quantity}
         Return dynArray
     End Function
 

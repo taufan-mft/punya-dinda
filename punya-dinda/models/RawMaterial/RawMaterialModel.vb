@@ -14,7 +14,7 @@ Public Class RawMaterialModel
     End Sub
 
     Overrides Function toArray() As List(Of String)
-        Dim dynArray As New List(Of String) From {Me.id, Me.name, Me.price.ToString()}
+        Dim dynArray As New List(Of String) From {Me.id, Me.name_mat, Me.price.ToString()}
         Return dynArray
     End Function
 
@@ -26,7 +26,7 @@ Public Class RawMaterialModel
 
     Sub saveData()
         Dim sql As String
-        sql = $"INSERT INTO {TABLE_QC_HEAD} VALUES({Me.id}, '{Me.date_now}', {Me.production_id})"
+        sql = $"INSERT INTO {TABLE_RAW_MATERIAL} VALUES({Me.id}, '{Me.name_mat}', {Me.price})"
         repository.executeRaw(sql)
     End Sub
 

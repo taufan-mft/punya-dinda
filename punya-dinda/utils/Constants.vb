@@ -8,7 +8,7 @@
     Public TABLE_MARKETING_DETAIL As String = "[marketing_invoice_items]"
 
     Public TABLE_PPIC_HEAD As String = "[ppic_work_order_head]"
-    Public TABLE_PPIC_ITEMS AS String = "[ppic_work_order_items]"
+    Public TABLE_PPIC_ITEMS As String = "[ppic_work_order_items]"
 
     Public TABLE_QC_HEAD As String = "[qc_assesment_head]"
     Public TABLE_QC_ITEMS As String = "[qc_assesment_items]"
