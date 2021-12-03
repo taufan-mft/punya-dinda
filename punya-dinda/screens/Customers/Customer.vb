@@ -12,7 +12,6 @@
                 repository.showDataFromTable(TABLE_CUSTOMER, DataGridView1)
             Else
                 MsgBox("ID tidak boleh sama.")
-
             End If
         Else
             MsgBox("Masih ada yang kosong.")
