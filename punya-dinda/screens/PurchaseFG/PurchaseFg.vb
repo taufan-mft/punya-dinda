@@ -41,6 +41,11 @@
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        'save here
+        Dim entry As New MarketingInvoiceHead(TextBox1.Text, "", total, TextBox4.Text, selectedCustomer.id, )
+        entry.saveData()
+        For Each order in orderList
+            order.id_order = entry.id
+            order.saveData()
+        Next
     End Sub
 End Class

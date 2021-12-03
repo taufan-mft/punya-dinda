@@ -9,8 +9,7 @@
     Public customer_id As Integer
 
 
-    Public Sub New(id As Integer,
-                invoice_code As String,
+    Public Sub New(invoice_code As String,
                 create_at As String,
                 total_price As String,
                 date_now As String, customer_id As Integer)
