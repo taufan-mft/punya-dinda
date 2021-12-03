@@ -2,6 +2,7 @@ Imports System.Data.OleDb
 
 Public Class PpicWorkModel
     Inherits BaseModel
+    Dim repository As Repository = Repository.getInstance()
     Public id As Integer
     Public work_code As String
     Public date_now As String
