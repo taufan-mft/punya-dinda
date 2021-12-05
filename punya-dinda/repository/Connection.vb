@@ -11,7 +11,6 @@ Module Connection
         Try
             Conn = New OleDbConnection("provider=microsoft.ace.oledb.12.0; data source = dbnya.accdb")
             Conn.Open()
-            MsgBox("DB Connected!")
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try

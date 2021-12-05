@@ -41,8 +41,8 @@ Public Class Repository
     Function getSingleData(Of T)(sql As String) As T
         CMD = New OleDb.OleDbCommand(sql, Conn)
         DM = CMD.ExecuteReader()
-            If DM.HasRows = True Then
-                While DM.Read
+        If DM.HasRows = True Then
+            While DM.Read
                 If GetType(T) Is GetType(ProductModel) Then
                     Return CAnyType(Of T)(New ProductModel(DM))
                 End If
@@ -50,7 +50,33 @@ Public Class Repository
                     Return CAnyType(Of T)(New CustomerModel(DM))
                 End If
             End While
-            End If
+        End If
+    End Function
+
+    Function getManyData(Of T)(sql As String) As List(Of T)
+        Dim result As New List(Of T)
+        CMD = New OleDb.OleDbCommand(sql, Conn)
+        DM = CMD.ExecuteReader()
+        If DM.HasRows = True Then
+            While DM.Read
+                If GetType(T) Is GetType(ProductModel) Then
+                    result.Add(CAnyType(Of T)(New ProductModel(DM)))
+                End If
+                If GetType(T) Is GetType(CustomerModel) Then
+                    result.Add(CAnyType(Of T)(New CustomerModel(DM)))
+                End If
+                If GetType(T) Is GetType(LogisticStockModel) Then
+                    result.Add(CAnyType(Of T)(New LogisticStockModel(DM)))
+                End If
+                If GetType(T) Is GetType(MarketingInvoiceHead) Then
+                    result.Add(CAnyType(Of T)(New MarketingInvoiceHead(DM)))
+                End If
+                If GetType(T) Is GetType(MarketingInvoiceDetail) Then
+                    result.Add(CAnyType(Of T)(New MarketingInvoiceDetail(DM)))
+                End If
+            End While
+        End If
+        Return result
     End Function
 
     Public Shared Function getInstance() As Repository
