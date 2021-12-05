@@ -20,6 +20,9 @@
 
     Public TABLE_RAW_MATERIAL As String = "[raw_material]"
 
+    Public TABLE_PURCHASING_HEAD As String = "[purchasing_invoice_head]"
+    Public TABLE_PURCHASING_ITEMS As String = "[purchasing_invoice_items]"
+
 
     Public TABLE_USER As String = "[users]"
     Public TABLE_GUDANG As String = "[gudang]"
