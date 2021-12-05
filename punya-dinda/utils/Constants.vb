@@ -24,10 +24,11 @@
     Public TABLE_USER As String = "[users]"
     Public TABLE_GUDANG As String = "[gudang]"
 
-    Public DIRECTION_IN As String = "in"
-    Public DIRECTION_OUT As String = "out"
+    Public DIRECTION_IN As Integer = 1
+    Public DIRECTION_OUT As Integer = 0
 
     Public TABLE_CUSTOMER As String = "[customers]"
     Public TABLE_PRODUK As String = "[product]"
+
 
 End Module

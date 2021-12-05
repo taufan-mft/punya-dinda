@@ -1,6 +1,8 @@
-﻿Public Class MarketingInvoiceDetail
+﻿Imports System.Data.OleDb
+
+Public Class MarketingInvoiceDetail
     Inherits BaseModel
-    Dim repository As Repository = repository.getInstance()
+    Dim repository As Repository = Repository.getInstance()
     Public id_detail As String
     Public id_order As String
     Public id_produk As String
@@ -34,4 +36,14 @@
         Dim dynArray As New List(Of String) From {Me.id_detail, Me.id_order, Me.id_produk, Me.jumlah.ToString(), Me.harga.ToString(), Me.total.ToString}
         Return dynArray
     End Function
+
+    Public Sub New(reader As OleDbDataReader)
+        Me.id_detail = DM.GetValue(0)
+        Me.id_order = DM.GetValue(1)
+        Me.id_produk = DM.GetValue(2)
+        Me.jumlah = DM.GetValue(3)
+        Me.total = DM.GetValue(4)
+        Me.harga = DM.GetValue(5)
+    End Sub
+
 End Class

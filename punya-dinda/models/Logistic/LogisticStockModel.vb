@@ -7,9 +7,20 @@ Public Class LogisticStockModel
     Public name As String
     Public quantity As Integer
     Public direction As Integer
+    Dim tableName As String
 
-    Public Sub New(id As String, nama As String, quantity As Integer, direction As Integer)
-        Me.id = id
+    Public Sub New(nama As String, quantity As Integer, direction As Integer, isRaw As Boolean)
+        Dim kode As Integer = CInt(Math.Ceiling(Rnd() * 99)) + CInt(Math.Ceiling(Rnd() * 12))
+
+        If isRaw Then
+            tableName = TABLE_LOGISTIC_RAW_STOCK
+        Else
+            tableName = TABLE_LOGISTIC_PRODUCT_STOCK
+        End If
+        While repository.checkDuplicateInteger(tableName, "id", kode.ToString)
+            kode = CInt(Math.Ceiling(Rnd() * 99)) + CInt(Math.Ceiling(Rnd() * 12))
+        End While
+        Me.id = kode
         Me.name = nama
         Me.quantity = quantity
         Me.direction = direction
@@ -25,6 +36,12 @@ Public Class LogisticStockModel
         Me.name = list(1)
         Me.quantity = list(2)
         Me.direction = list(3)
+    End Sub
+
+    Sub saveData(productId As Integer)
+        Dim sql As String
+        sql = $"INSERT INTO {tableName} VALUES({Me.id}, {productId}, {Me.quantity}, {Me.direction})"
+        repository.executeRaw(sql)
     End Sub
 
     Public Sub New(reader As OleDbDataReader)

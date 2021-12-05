@@ -26,7 +26,6 @@ Public Class ProductModel
 
     Public Sub New(reader As OleDbDataReader)
         Me.id = DM.GetValue(0)
-        Debug.WriteLine($"nih valuee {DM.GetString(1)}")
         Me.name = DM.GetString(1)
         Me.price = CInt(DM.GetString(2))
     End Sub
