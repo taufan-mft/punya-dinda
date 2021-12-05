@@ -33,50 +33,53 @@ Partial Class WareHouse
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(111, 28)
+        Me.Label1.Location = New System.Drawing.Point(97, 21)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(70, 20)
+        Me.Label1.Size = New System.Drawing.Size(55, 15)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Stok Raw"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(111, 269)
+        Me.Label2.Location = New System.Drawing.Point(97, 202)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(88, 20)
+        Me.Label2.Size = New System.Drawing.Size(71, 15)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Stok Produk"
         '
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(111, 62)
+        Me.DataGridView1.Location = New System.Drawing.Point(97, 46)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersWidth = 51
         Me.DataGridView1.RowTemplate.Height = 29
-        Me.DataGridView1.Size = New System.Drawing.Size(498, 188)
+        Me.DataGridView1.Size = New System.Drawing.Size(436, 141)
         Me.DataGridView1.TabIndex = 2
         '
         'DataGridView2
         '
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView2.Location = New System.Drawing.Point(111, 303)
+        Me.DataGridView2.Location = New System.Drawing.Point(97, 227)
+        Me.DataGridView2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.DataGridView2.Name = "DataGridView2"
         Me.DataGridView2.RowHeadersWidth = 51
         Me.DataGridView2.RowTemplate.Height = 29
-        Me.DataGridView2.Size = New System.Drawing.Size(498, 188)
+        Me.DataGridView2.Size = New System.Drawing.Size(436, 141)
         Me.DataGridView2.TabIndex = 3
         '
         'WareHouse
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 537)
+        Me.ClientSize = New System.Drawing.Size(700, 403)
         Me.Controls.Add(Me.DataGridView2)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "WareHouse"
         Me.Text = "WareHouse"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
