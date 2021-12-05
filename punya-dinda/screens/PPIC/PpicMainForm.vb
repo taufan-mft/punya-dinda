@@ -5,7 +5,7 @@
     Dim rawStock As List(Of LogisticProductStatusPresentation)
     Dim productRequired As List(Of LogisticProductStatusPresentation)
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-
+        PpicWorkOrder.Show()
     End Sub
 
     Private Sub PpicMainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
