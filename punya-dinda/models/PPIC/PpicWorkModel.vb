@@ -9,11 +9,12 @@ Public Class PpicWorkModel
     Public keterangan As String
     Public completed As Integer
 
-    Public Sub New(id As Integer, work_code As String, keterangan As String, completed As String)
+    Public Sub New(id As Integer, work_code As String, keterangan As String, date_now As String, completed As Integer)
         Me.id = id
         Me.work_code = work_code
         Me.keterangan = keterangan
         Me.completed = completed
+        Me.date_now = date_now
     End Sub
 
     Overrides Function toArray() As List(Of String)
@@ -31,7 +32,7 @@ Public Class PpicWorkModel
 
     Sub saveData()
         Dim sql As String
-        sql = $"INSERT INTO {TABLE_PPIC_HEAD} VALUES({Me.id}, '{Me.work_code}', '{Me.date_now}, '{Me.keterangan}', {Me.completed})"
+        sql = $"INSERT INTO {TABLE_PPIC_HEAD} VALUES({Me.id}, '{Me.work_code}', '{Me.date_now}', '{Me.keterangan}', {Me.completed})"
         repository.executeRaw(sql)
     End Sub
 
