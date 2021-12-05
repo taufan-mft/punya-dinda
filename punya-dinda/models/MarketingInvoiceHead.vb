@@ -14,7 +14,7 @@
                 total_price As String,
                 date_now As String, customer_id As Integer)
         Dim kode As Integer = CInt(Math.Ceiling(Rnd() * 99)) + CInt(Math.Ceiling(Rnd() * 12))
-        While repository.checkDuplicateInteger(TABLE_MARKETING_DETAIL, "id", kode.ToString)
+        While repository.checkDuplicateInteger(TABLE_MARKETING_HEAD, "id", kode.ToString)
             kode = CInt(Math.Ceiling(Rnd() * 99)) + CInt(Math.Ceiling(Rnd() * 12))
         End While
         Me.id = kode
