@@ -33,4 +33,15 @@
         Return result
     End Function
 
+    Function getProductsInvoice(invoiceCode As String) As List(Of PpicProductPresentation)
+        Dim invHead = repository.getSingleData(Of MarketingInvoiceHead)($"SELECT * FROM {TABLE_MARKETING_HEAD} WHERE invoice_code='{invoiceCode}'")
+        Dim workItems = repository.getManyData(Of MarketingInvoiceDetail)($"SELECT * FROM {TABLE_MARKETING_DETAIL} WHERE invoice_id={invHead.id}")
+        Dim result As New List(Of PpicProductPresentation)
+        For Each item In workItems
+            Dim product = repository.getSingleData(Of ProductModel)($"SELECT * FROM {TABLE_PRODUK} WHERE id={item.id_produk}")
+            result.Add(New PpicProductPresentation(product.id, product.name, item.jumlah))
+        Next
+        Return result
+    End Function
+
 End Class

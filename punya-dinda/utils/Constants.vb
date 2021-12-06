@@ -14,7 +14,7 @@
     Public TABLE_QC_ITEMS As String = "[qc_assesment_items]"
 
     Public TABLE_LOGISTIC_DO_HEAD As String = "[logistic_do_invoice]"
-    Public TABLE_LOGISTIC_DO_DETAIL As String = "[logistic_do_invoice_items"
+    Public TABLE_LOGISTIC_DO_DETAIL As String = "[logistic_do_invoice_items]"
     Public TABLE_LOGISTIC_PRODUCT_STOCK As String = "[logistic_product_stock]"
     Public TABLE_LOGISTIC_RAW_STOCK As String = "[logistic_raw_stock]"
 

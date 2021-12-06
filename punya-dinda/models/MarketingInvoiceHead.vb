@@ -33,6 +33,12 @@ Public Class MarketingInvoiceHead
         repository.executeRaw(sql)
     End Sub
 
+    Sub updateCompleted(createdAt As String)
+        Dim sql As String
+        sql = $"UPDATE {TABLE_MARKETING_HEAD} SET create_at='{createdAt}' WHERE id={Me.id}"
+        repository.executeRaw(sql)
+    End Sub
+
     Overrides Function toArray() As List(Of String)
         Dim dynArray As New List(Of String) From {Me.id, Me.invoice_code, Me.create_at, Me.total_price, Me.date_now, Me.customer_id}
         Return dynArray
