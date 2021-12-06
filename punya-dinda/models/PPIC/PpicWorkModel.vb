@@ -44,6 +44,12 @@ Public Class PpicWorkModel
         repository.executeRaw(sql)
     End Sub
 
+    Sub updateQced()
+        Dim sql As String
+        sql = $"UPDATE {TABLE_PPIC_HEAD} SET assessed=-1 WHERE id={Me.id}"
+        repository.executeRaw(sql)
+    End Sub
+
     Public Sub New(reader As OleDbDataReader)
         Me.id = DM.GetValue(0)
         Debug.WriteLine($"nih valuee {DM.GetString(1)}")

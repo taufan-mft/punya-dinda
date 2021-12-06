@@ -7,8 +7,12 @@ Public Class QcHeadModel
     Public date_now As String
     Public production_id As Integer
 
-    Public Sub New(id As Integer, date_now As String, production_id As Integer)
-        Me.id = id
+    Public Sub New(date_now As String, production_id As Integer)
+        Dim kode As Integer = CInt(Math.Ceiling(Rnd() * 99)) + CInt(Math.Ceiling(Rnd() * 12))
+        While repository.checkDuplicateInteger(TABLE_QC_HEAD, "id", kode.ToString)
+            kode = CInt(Math.Ceiling(Rnd() * 99)) + CInt(Math.Ceiling(Rnd() * 12))
+        End While
+        Me.id = kode
         Me.date_now = date_now
         Me.production_id = production_id
     End Sub
@@ -32,7 +36,6 @@ Public Class QcHeadModel
 
     Public Sub New(reader As OleDbDataReader)
         Me.id = DM.GetValue(0)
-        Debug.WriteLine($"nih valuee {DM.GetString(1)}")
         Me.date_now = DM.GetString(1)
         Me.production_id = DM.GetValue(2)
     End Sub

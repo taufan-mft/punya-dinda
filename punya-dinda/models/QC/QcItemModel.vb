@@ -10,8 +10,12 @@ Public Class QcItemModel
     Public accept As Integer
     Public total As Integer
 
-    Public Sub New(id As Integer, qc_head_id As Integer, product_id As Integer, reject As Integer, accept As Integer, total As Integer)
-        Me.id = id
+    Public Sub New(qc_head_id As Integer, product_id As Integer, reject As Integer, accept As Integer, total As Integer)
+        Dim kode As Integer = CInt(Math.Ceiling(Rnd() * 99)) + CInt(Math.Ceiling(Rnd() * 12))
+        While repository.checkDuplicateInteger(TABLE_QC_ITEMS, "id", kode.ToString)
+            kode = CInt(Math.Ceiling(Rnd() * 99)) + CInt(Math.Ceiling(Rnd() * 12))
+        End While
+        Me.id = kode
         Me.qc_head_id = qc_head_id
         Me.product_id = product_id
         Me.reject = reject

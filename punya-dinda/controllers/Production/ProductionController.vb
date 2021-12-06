@@ -14,6 +14,10 @@
         Return workOrders
     End Function
 
+    Function getCompleteWorkOrders() As List(Of PpicWorkModel)
+        Return repository.getManyData(Of PpicWorkModel)($"SELECT * FROM {TABLE_PPIC_HEAD} WHERE completed=-1")
+    End Function
+
     Function getSingleWo(workCode As String) As PpicWorkModel
         Return repository.getSingleData(Of PpicWorkModel)($"SELECT * FROM {TABLE_PPIC_HEAD} WHERE work_code='{workCode}'")
     End Function
