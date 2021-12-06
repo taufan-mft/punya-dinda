@@ -39,10 +39,9 @@ Public Class PpicWorkItemModel
 
     Public Sub New(reader As OleDbDataReader)
         Me.id = DM.GetValue(0)
-        Debug.WriteLine($"nih valuee {DM.GetString(1)}")
-        Me.ppic_wo_id = DM.GetString(1)
-        Me.product_id = DM.GetString(2)
-        Me.quantity = DM.GetString(3)
+        Me.ppic_wo_id = DM.GetValue(1)
+        Me.product_id = DM.GetValue(2)
+        Me.quantity = DM.GetValue(3)
     End Sub
 
 End Class

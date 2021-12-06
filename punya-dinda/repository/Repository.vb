@@ -49,6 +49,21 @@ Public Class Repository
                 If GetType(T) Is GetType(CustomerModel) Then
                     Return CAnyType(Of T)(New CustomerModel(DM))
                 End If
+                If GetType(T) Is GetType(LogisticStockModel) Then
+                    Return CAnyType(Of T)(New LogisticStockModel(DM))
+                End If
+                If GetType(T) Is GetType(MarketingInvoiceHead) Then
+                    Return CAnyType(Of T)(New MarketingInvoiceHead(DM))
+                End If
+                If GetType(T) Is GetType(MarketingInvoiceDetail) Then
+                    Return CAnyType(Of T)(New MarketingInvoiceDetail(DM))
+                End If
+                If GetType(T) Is GetType(PpicWorkModel) Then
+                    Return CAnyType(Of T)(New PpicWorkModel(DM))
+                End If
+                If GetType(T) Is GetType(PpicWorkItemModel) Then
+                    Return CAnyType(Of T)(New PpicWorkItemModel(DM))
+                End If
             End While
         End If
     End Function
@@ -73,6 +88,12 @@ Public Class Repository
                 End If
                 If GetType(T) Is GetType(MarketingInvoiceDetail) Then
                     result.Add(CAnyType(Of T)(New MarketingInvoiceDetail(DM)))
+                End If
+                If GetType(T) Is GetType(PpicWorkModel) Then
+                    result.Add(CAnyType(Of T)(New PpicWorkModel(DM)))
+                End If
+                If GetType(T) Is GetType(PpicWorkItemModel) Then
+                    result.Add(CAnyType(Of T)(New PpicWorkItemModel(DM)))
                 End If
             End While
         End If

@@ -30,4 +30,8 @@
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
         WareHouse.Show()
     End Sub
+
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        ProductionGoods.Show()
+    End Sub
 End Class
