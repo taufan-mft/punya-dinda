@@ -23,4 +23,8 @@
         Return result
     End Function
 
+    Function getCompletedInvoices() As List(Of MarketingInvoiceHead)
+        Return repository.getManyData(Of MarketingInvoiceHead)($"SELECT * FROM {TABLE_MARKETING_HEAD} WHERE create_at=''")
+    End Function
+
 End Class

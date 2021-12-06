@@ -64,6 +64,9 @@ Public Class Repository
                 If GetType(T) Is GetType(PpicWorkItemModel) Then
                     Return CAnyType(Of T)(New PpicWorkItemModel(DM))
                 End If
+                If GetType(T) Is GetType(CustomerModel) Then
+                    Return CAnyType(Of T)(New CustomerModel(DM))
+                End If
             End While
         End If
     End Function
@@ -94,6 +97,9 @@ Public Class Repository
                 End If
                 If GetType(T) Is GetType(PpicWorkItemModel) Then
                     result.Add(CAnyType(Of T)(New PpicWorkItemModel(DM)))
+                End If
+                If GetType(T) Is GetType(CustomerModel) Then
+                    result.Add(CAnyType(Of T)(New CustomerModel(DM)))
                 End If
             End While
         End If
